@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="practica">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<!--<link rel="stylesheet" href="https://metdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">-->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angular/1.2.6/angular.min.js"></script>-->
+	<script src="formulario.js"></script>
+	<link rel="stylesheet" type="text/css" href="Esilos.css">
+	
+</head>
+<body ng-app>
+	<div class="cont">
+		<br>
+		<h1 align="center">Green Leaves</h1>
+		<hr>
+		<form role="form" name="forma">
+			<div class="form_gg" ng-class="{'has-error': forma.Nombreu.$invalid, 'has-success': forma.Nombreu.$valid}">
+				<label form="inputNombre">Nombre</label>
+				<input id="inputNombre" tabindex="center" type="text" class="form-control" placeholder="Nombre" name="Nombreu" ng-model="usuario.nombre" pattern="[A-Za-z]{2,15}" required>
+			</div>
+			<br>
+			<br>
+			<div class="form_gg">
+				<label for="inputemail"> Email</label>
+				<input id="inputEmail"tabindex="center" type="Email" class="form-control"  placeholder="Email" name="emailU" ng-model="usuario.email" required>
+			</div>
+			<br> 
+					<div class="form_gg">
+				<label for="inputTel">Teléfono</label>
+				<input id="inputTel" tabindex="center" type="telefono" class="form-control"  placeholder="Telefono" name="telefonou" ng-model="usuario.telefono"parttern="[0-9]{9}" required>
+			</div>
+
+			<br>
+			<div class="form_gg">
+				<label for="inpufecha"> Fecha</label>
+				<input id="date" type="date">
+				<!--<input id="inpufecha" tabindex="center"type="fecha" min="2000-01-01" max="2019-12-31" value="2019-01-01"> required>
+				class="form-control"  placeholder="fecha" name="fechau" ng-model="usuario.fecha" required>-->
+			</div>
+			<br>
+			<div class="form_gg">
+				<label for="inputCiu"> Ciudad o Estado</label>
+				<input id="inputCiu" tabindex="center" type="fecha" class="form-control"  placeholder="Ciudad" name="cuiu" ng-model="usuario.fecha" required>
+			</div>
+				<div ng-show="forma.emailU.$dirty && forma.emailU.$invalid">
+					<p class="help-block text-danger" ng-show="forma.emailU.$error.required" >Campo Obligatorio</p>
+					<p class="help-block text-danger" ng-show="forma.emailU.$error.email">Email invalido</p>
+				</div>
+			</div>
+				<input type="submit" value="Enviar" id="enviar">
+
+			</div>
+		</form>
+		<hr>
+		<span class="lead text-primary"></span>
+				
+			</div>
+			</div>
+	</div>
+
+</body>
+</html>
